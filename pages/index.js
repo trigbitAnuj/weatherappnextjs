@@ -70,14 +70,14 @@ function App() {
           }
 }
         />
-        {/* <button
+         <button
           onClick={()=>{onHandleClick(changecity)
           }}
           className="mx-2 border border-black p-1"
         >
           Search
-        </button> */}
-        <Link href={`api/weather?city=${changecity}`}>Search</Link>
+        </button> 
+       
       </div>
       <WeatherDetails forcast={forcast}/></>:null}
     
