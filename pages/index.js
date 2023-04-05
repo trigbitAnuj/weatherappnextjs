@@ -5,7 +5,7 @@ import styles from '@/styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import WeatherDetails from '@/components/weatherDetails'
 import { getCurrentWeatherData } from '@/common/api'
 import Link from 'next/link'
@@ -26,12 +26,12 @@ function App() {
 
  
 
- function onHandleClick(city){
-  console.log("handle Clicked","line30")
-    fetchData(city)
-     setCity(city)
-     SetChangecity("")
-  }
+ const onHandleClick=useCallback((city)=>{
+  fetchData(city)
+  setCity(city)
+  SetChangecity("")
+ },[changecity])
+  
   
   
   
@@ -49,7 +49,7 @@ function App() {
   useEffect(() => {
     fetchData(city)
     
-  },[city,changecity])
+  },[city])
 
   if(!forcast){
     return 
