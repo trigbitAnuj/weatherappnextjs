@@ -28,8 +28,9 @@ function App() {
 
  function onHandleClick(city){
   console.log("handle Clicked","line30")
+    fetchData(city)
      setCity(city)
-      fetchData(city)
+     SetChangecity("")
   }
   
   
