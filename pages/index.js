@@ -22,13 +22,13 @@ function App() {
    const[city, setCity] = useState("Chandigarh");
    const [changecity,SetChangecity]=useState("");
 
-   console.log(city);
-   console.log(forcast)
+   
 
  
 
  function onHandleClick(city){
-  console.log("handle Clicked")
+  console.log("handle Clicked","line30")
+     setCity(city)
       fetchData(city)
   }
   
@@ -39,7 +39,7 @@ function App() {
     
     
     setForcast(data)
-    console.log(data);
+    console.log(data,"line 41");
     
   }
   
